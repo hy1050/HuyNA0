@@ -18,11 +18,17 @@ namespace dcom.declaration
         public static Workbook WbDatabase { get; set; }
         public static Worksheet WsDatabase { get; set; }
 
+        //public static string DatabaseSource { get; set; }
+        public static string DatabasePath { get; set; }
+        public static string PublicCANDBC { get; set; }
+        public static string PrivateCANDBC { get; set; }
+        public static string TestcaseDirectory { get; set; }
+
         public static string DatabaseSource = "Local";
-        public static string DatabasePath = "";
-        public static string PublicCANDBC = "";
-        public static string PrivateCANDBC = "";
-        public static string TestcaseDirectory = "";
+        //public static string DatabasePath = "";
+        //public static string PublicCANDBC = "";
+        //public static string PrivateCANDBC = "";
+        //public static string TestcaseDirectory = "";
 
         public static int[] StartRowIndexDatabaseTables { get; set; }
         public static int[] StartColumnIndexDatabaseTables { get; set; }

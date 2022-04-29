@@ -95,6 +95,7 @@ namespace dcom.declaration
             DatabaseVariables.RC = CommonSettingDatabase[3].ElementAt(3)[1];
 
             // Data Path Information
+            //public static string DatabaseSource = "Local";
             DatabaseVariables.DatabaseSource = CommonSettingDatabase[4].ElementAt(0)[1];
             DatabaseVariables.PublicCANDBC = CommonSettingDatabase[4].ElementAt(2)[1];
             DatabaseVariables.PrivateCANDBC = CommonSettingDatabase[4].ElementAt(3)[1];
