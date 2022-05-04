@@ -28,7 +28,8 @@ namespace dcom.models.models_databaseHandling.models_saveDatabase
             {
                 dataRow = new string[]
                 {
-                    //dcom.views.views_ToolBar.View_Setting.ProjectInformation
+                    dcom.views.views_ToolBar.View_Setting.ProjectInformation.ElementAt(1)[1],
+
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[8]   ].Text,  // Project Information
                     ws.Cells[rowIndex, startColumnIndexDatabaseTable[8] + 1].Text, // Information
                 };
