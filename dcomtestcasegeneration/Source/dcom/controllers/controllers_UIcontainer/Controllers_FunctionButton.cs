@@ -2,6 +2,7 @@
 using dcom.declaration;
 using dcom.models.models_databaseHandling.models_getDatabase;
 using dcom.models.models_testcaseHandling;
+using dcom.models.models_databaseHandling.models_saveDatabase;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,14 +36,14 @@ namespace dcom.controllers.controllers_UIcontainer
         public static void ButtonSaveClick()
         {
             declaration.Definition.DatabaseVariableDefinition();
-
+            Model_DatabaseTemplate.SaveDatabase();
 
             MessageBoxButtons btn = MessageBoxButtons.YesNo;
             DialogResult res = MessageBox.Show("The database updated successfully!\nWould you like to open the database excel file?", "Notice", btn);
 
             if (res == DialogResult.Yes)
             {
-                Process.Start(TestcaseVariables.PathOutputTestcase);
+                Process.Start(DatabaseVariables.PathOutputDatabase);
             }
             else
             {
@@ -51,7 +52,8 @@ namespace dcom.controllers.controllers_UIcontainer
         }
 
         public static void ButtonLoadDataClick()
-        {          
+        {
+            
             string databasePath = DatabaseVariables.DatabasePath;
             
             // Open the database

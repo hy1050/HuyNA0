@@ -23,19 +23,17 @@ namespace dcom.declaration
         public static string PublicCANDBC { get; set; }
         public static string PrivateCANDBC { get; set; }
         public static string TestcaseDirectory { get; set; }
+        public static string DatabaseDirectory { get; set; }
+        public static string TemplatePath { get; set; }
 
         public static string DatabaseSource = "Local";
-        //public static string DatabasePath = "";
-        //public static string PublicCANDBC = "";
-        //public static string PrivateCANDBC = "";
-        //public static string TestcaseDirectory = "";
 
         public static int[] StartRowIndexDatabaseTables { get; set; }
         public static int[] StartColumnIndexDatabaseTables { get; set; }
-        public static string ProjectName = "";
-        public static string Variant = "";
-        public static string Release = "";
-        public static string RC = "";
+        public static string ProjectName { get; set; }
+        public static string Variant { get; set; }
+        public static string Release { get; set; }
+        public static string RC { get; set; }
 
         public static List<List<string[]>> DatabaseService10 { get; set; }
         public static List<List<string[]>> DatabaseService11 { get; set; }

@@ -247,6 +247,8 @@ namespace dcom.views
         {
             Cursor = Cursors.WaitCursor;
 
+            Controllers_FunctionButton.ButtonSaveClick();
+
             //View_Save frm = new View_Save();
             //Controllers_FunctionButton.ButtonExportClick();
             //Controller_UIHandling.ShowUserControl(panel_bodyMain, frm);

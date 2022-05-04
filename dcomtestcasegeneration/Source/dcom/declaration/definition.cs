@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dcom.controllers;
 using dcom.models.models_databaseHandling.models_getDatabase;
+using dcom.models.models_databaseHandling.models_saveDatabase;
 using Microsoft.Office.Interop.Excel;
 namespace dcom.declaration
 {
@@ -20,6 +21,11 @@ namespace dcom.declaration
 
         public static void DatabaseVariableDefinition()
         {
+            DatabaseVariables.NameOutputDatabase = "DB_" + DatabaseVariables.ProjectName + "_" + DatabaseVariables.Variant + "_" + DatabaseVariables.Release + "_DCOM.xlsx";
+            DatabaseVariables.DirectoryOutputDatabase = DatabaseVariables.TemplatePath;
+            DatabaseVariables.PathOutputDatabase = DatabaseVariables.DirectoryOutputDatabase + @"\" + DatabaseVariables.NameOutputDatabase;
+            //DatabaseVariables.SubID = TestcaseVariables.NameOutputTestcase.Remove(TestcaseVariables.NameOutputTestcase.Length - 5) + "_";
+
             DatabaseVariables.StartRowIndexDatabaseTables = new int[]
             {   2, // Common Setting
                 11,// Common command
@@ -48,6 +54,15 @@ namespace dcom.declaration
                 1  // Selected Service
             };
 
+            // Get data from view
+            List<string[]>[] CommonSettingDatabase_View = new List<string[]>[]{
+                //Model_SaveCommonSettingDatabase.CommonSetting(),
+                //Model_SaveCommonSettingDatabase.CommonCommand(),
+                //Model_SaveCommonSettingDatabase.CommonDID(),
+                Model_SaveCommonSettingDatabase.ProjectInformation(),
+                Model_SaveCommonSettingDatabase.DataPathInformation(),
+                Model_SaveCommonSettingDatabase.SelectedServiceInformation(),
+            };
 
             // Get data from database
             List<string[]>[] CommonSettingDatabase = new List<string[]>[]{
@@ -100,7 +115,7 @@ namespace dcom.declaration
             DatabaseVariables.PublicCANDBC = CommonSettingDatabase[4].ElementAt(2)[1];
             DatabaseVariables.PrivateCANDBC = CommonSettingDatabase[4].ElementAt(3)[1];
             DatabaseVariables.TestcaseDirectory = CommonSettingDatabase[4].ElementAt(4)[1];
-
+            DatabaseVariables.TemplatePath = CommonSettingDatabase[4].ElementAt(5)[1];
 
             // Selected Service Information
             DatabaseVariables.SelectedServiceStatus = new bool[12];
